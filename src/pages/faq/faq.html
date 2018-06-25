@@ -1,0 +1,128 @@
+<!--Mobile  Zone-->
+
+<ion-header *ngIf="ism">
+
+  <ion-navbar color="primary">
+
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Easy Lives</ion-title>
+
+
+
+    <ion-buttons end>
+      <button ion-button (click)="gtLogin()" icon-only>
+        <ion-icon name="md-contact"></ion-icon>
+      </button>
+
+      <button ion-button icon-only>
+        <ion-icon name="md-cart"></ion-icon>
+      </button>
+
+
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<!--Mobile Zone End-->
+
+
+
+<!--Desktop Zone-->
+
+<ion-header *ngIf="!ism">
+  <ion-navbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="gtHome()">
+          <ion-title>Easy Lives</ion-title>
+        </ion-col>
+        <ion-col col-8>
+          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        </ion-col>
+        <ion-col col-2>
+          <a href="https://play.google.com/store?hl=en" target="_blank">
+            <img src="assets/imgs/playstore.png" class="playstore" />
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+
+
+
+
+</ion-header>
+<!--Desktop Zone End-->
+
+
+<ion-content>
+
+
+        <ion-list>
+          <h1 padding>FAQ's</h1>
+          <ion-card>
+            <ion-item color="second" (click)="t1()" >
+              Question 1
+              <ion-icon name="add" *ngIf="!q1" item-end></ion-icon>
+              <ion-icon name="remove" *ngIf="q1" item-end></ion-icon>
+            </ion-item>
+            <ion-item *ngIf="q1" >
+              <p>This is an answer to the first Question</p>
+            </ion-item>
+          </ion-card>
+
+
+          <ion-card>
+          <ion-item color="second" (click)="t2()">
+            Question 2
+              <ion-icon name="add" *ngIf="!q2" item-end></ion-icon>
+              <ion-icon name="remove" *ngIf="q2" item-end></ion-icon>
+          </ion-item>
+          <ion-item *ngIf="q2">
+            <p>Albert Einstein was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of
+            modern physics. His work is also known for its influence on the philosophy of science.</p>
+          </ion-item>
+          </ion-card>
+          
+          
+          <ion-card>
+          <ion-item color="second" (click)="t3()">
+            Question 3
+              <ion-icon name="add" *ngIf="!q3" item-end></ion-icon>
+              <ion-icon name="remove" *ngIf="q3" item-end></ion-icon>
+          </ion-item>
+          <ion-item *ngIf="q3">
+            <p>This is an answer to the third Question</p>
+          </ion-item>
+          </ion-card>
+          
+          
+          <ion-card>
+          <ion-item color="second" (click)="t4()">
+            Question 4
+              <ion-icon name="add" *ngIf="!q4" item-end></ion-icon>
+              <ion-icon name="remove" *ngIf="q4" item-end></ion-icon>
+          </ion-item>
+          <ion-item *ngIf="q4">
+            <p>This is an answer to the Fourth Question</p>
+          </ion-item>
+          </ion-card>
+
+        </ion-list>
+
+
+
+
+
+
+
+  
+</ion-content>

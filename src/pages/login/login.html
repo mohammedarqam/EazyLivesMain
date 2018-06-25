@@ -1,0 +1,291 @@
+<!--Mobile  Zone-->
+
+<ion-header *ngIf="ism">
+
+  <ion-navbar color="primary">
+
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Easy Lives</ion-title>
+
+
+
+    <ion-buttons end>
+      <button ion-button (click)="gtLogin()" icon-only>
+        <ion-icon name="md-contact"></ion-icon>
+      </button>
+
+      <button ion-button icon-only>
+        <ion-icon name="md-cart"></ion-icon>
+      </button>
+
+
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<!--Mobile Zone End-->
+
+
+
+<!--Desktop Zone-->
+
+<ion-header *ngIf="!ism">
+  <ion-navbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="gtHome()">
+          <ion-title>Easy Lives</ion-title>
+        </ion-col>
+        <ion-col col-8>
+          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        </ion-col>
+        <ion-col col-2>
+          <a href="https://play.google.com/store?hl=en" target="_blank">
+            <img src="assets/imgs/playstore.png" class="playstore" />
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+
+
+
+
+</ion-header>
+<!--Desktop Zone End-->
+
+
+
+
+
+
+
+
+
+
+
+<ion-content *ngIf="ism">
+
+  <ion-slides #slides>
+
+    <!-- Login Screen -->
+
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <h1 class="signinTitle">Login</h1>
+
+          <ion-item>
+            <ion-label color="second" floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="lemail" class="input-m" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="second" floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="lpass" class="input-m" ></ion-input>
+          </ion-item>
+
+          <button ion-button color="button" block [disabled]="!lemail||!lpass" (click)="login()">Login</button>
+
+          <hr class="divider">
+
+          <button ion-button color="footer" block (click)="signUpSlide()">New User ? Sign Up</button>
+
+
+
+        </ion-card-content>
+
+
+      </ion-card>
+    </ion-slide>
+
+    <!-- Login Screen End-->
+
+    <!-- SignUp Screen-->
+    <ion-slide>
+      <ion-card >
+        <ion-card-content>
+          <h1 class="signinTitle">Sign Up</h1>
+
+          <ion-item>
+            <ion-label color="second" floating >Name</ion-label>
+            <ion-input type="text" [(ngModel)]="sname" class="input-m"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="second" floating>Phone</ion-label>
+            <ion-input type="email" [(ngModel)]="sphone" class="input-m" ></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label color="second" floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="semail" class="input-m"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="second" floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="spass" class="input-m"></ion-input>
+          </ion-item>
+
+          <button ion-button color="button" [disabled]="!sname||!sphone||!semail||!spass" block (click)="signUp()">Sign Up</button>
+
+          <hr class="divider">
+
+          <button ion-button color="footer" block (click)="loginSlide()">Already a User ? Login</button>
+
+
+
+        </ion-card-content>
+
+
+      </ion-card>
+    </ion-slide>
+
+    <!-- SignUp Screen End-->
+  </ion-slides>
+</ion-content>
+
+
+
+
+
+
+<ion-content *ngIf="!ism" >
+
+  <ion-slides #slides >
+
+<!-- Login Screen -->
+
+
+    <ion-slide  >
+      <ion-card class="card-desktop" >
+        <ion-card-content>
+          <h1 class="signinTitle">Login</h1>
+  
+          <ion-item>
+            <ion-label  color="second" fixed>Email</ion-label>
+            <ion-input class="input-desktop" type="email"  [(ngModel)]="lemail"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="second" fixed>Password</ion-label>
+            <ion-input class="input-desktop" type="password" [(ngModel)]="lpass"></ion-input>
+          </ion-item>
+  
+          <button ion-button color="button" block [disabled]="!lemail" (click)="login()">Login</button>
+
+          <hr class="divider" >
+
+          <button ion-button color="footer" block (click)="signUpSlide()" >New User ? Sign Up</button>
+
+
+
+        </ion-card-content>
+  
+  
+      </ion-card>
+    </ion-slide>
+
+<!-- Login Screen End-->
+
+<!-- SignUp Screen-->
+    <ion-slide >
+      <ion-card class="card-desktop" >
+        <ion-card-content>
+          <h1 class="signinTitle">Sign Up</h1>
+
+          <ion-item>
+            <ion-label color="second" fixed>Name</ion-label>
+            <ion-input class="input-desktop" type="text" [(ngModel)]="sname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="second" fixed>Phone</ion-label>
+            <ion-input type="email" class="input-desktop" [(ngModel)]="sphone"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label color="second" fixed>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="semail" class="input-desktop" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="second" fixed>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="spass" class="input-desktop" ></ion-input>
+          </ion-item>
+    
+          <button ion-button color="button" [disabled]="!sname" block (click)="signUp()">Sign Up</button>
+    
+          <hr class="divider">
+    
+          <button ion-button color="footer" block  (click)="loginSlide()">Already a User ? Login</button>
+    
+    
+    
+        </ion-card-content>
+    
+    
+      </ion-card>
+    </ion-slide>
+
+<!-- SignUp Screen End-->
+
+
+  </ion-slides>
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+
+
+  <ion-toolbar class="footer" color="footer">
+
+    <ion-buttons padding>
+      <button ion-button (click)="gtContact()">
+        Contact Us
+      </button>
+
+      <button ion-button (click)="gtFaq()">
+        FAQ's
+      </button>
+
+      <button ion-button (click)="gtPP()">
+        Privacy Policy
+      </button>
+
+      <button ion-button (click)="gtTnc()">
+        Terms and Conditions
+      </button>
+      <a href="./vendor/index.html">
+        <button ion-button (click)="gtV()">
+          Become a Vendor
+        </button>
+      </a>
+
+    </ion-buttons>
+  </ion-toolbar>
+
+
+
+
+
+
+</ion-footer>

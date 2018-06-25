@@ -1,14 +1,306 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<!--Mobile  Zone-->
+
+<ion-header *ngIf="ism" >
+
+  <ion-navbar  color="primary">
+  
+  
+    <button  ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Easy Lives</ion-title>
+  
+  
+  
+      <ion-buttons end>
+        <button ion-button (click)="gtLogin()" icon-only >
+          <ion-icon name="md-contact"></ion-icon>
+        </button>
+  
+        <button ion-button icon-only>
+          <ion-icon name="md-cart"></ion-icon>
+        </button>
+  
+  
+  
+      </ion-buttons>
+  
+      </ion-navbar>
+  
+  
+  
+  
+      <ion-toolbar color="primary">
+  
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+  
+  <ion-toolbar color="primary" >
+        <button ion-button >Category</button>
+  </ion-toolbar>
+  
+  </ion-header>
+  
+  <!--Mobile Zone End-->
+  
+  
+  
+  <!--Desktop Zone-->
+  
+  <ion-header *ngIf="!ism" >
+    <ion-navbar  color="primary"  >
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="gtHome()" >
+          <ion-title  >Easy Lives</ion-title>
+        </ion-col>
+        <ion-col col-8 >
+          <ion-searchbar  (ionInput)="getItems($event)"></ion-searchbar>
+        </ion-col>      
+        <ion-col col-2 >
+        <a href="https://play.google.com/store?hl=en" target="_blank">
+          <img src="assets/imgs/playstore.png" class="playstore"/>
+        </a>
+        </ion-col>      
+      </ion-row>
+    </ion-grid>    
+  </ion-navbar>
+  
+  <ion-navbar color="primary" class="secondBarDesktop" >
+        <button ion-button class="btnsSecondBar">Category</button>
+  
+      <ion-buttons end  padding >
+        <button ion-button color="button" *ngIf="!userin" (click)="gtLogin()" class="btnsSecondBar" >
+        Sign IN
+        </button>
+        <button ion-button color="button" *ngIf="userin " (click)="signOut()" class="btnsSecondBar">
+          Sign Out
+        </button>
+        <button ion-button icon-only class="btnsSecondBar">
+          <ion-icon name="md-cart"></ion-icon>Cart
+        </button>
+      
+      
+      </ion-buttons>
+  </ion-navbar>
+  
+  
+  
+  
+  </ion-header>
+  <!--Desktop Zone End-->
+  
+  
+  <ion-content>
+  
+  
+    <!--Slider -->
+  <div class="wrapper">
+    <ion-slides   *ngIf="banners && banners.length" autoplay="3000" loop="true" speed="500" pager="true" >
+      <ion-slide *ngFor="let banner of banners">
+        <img [src]="banner.Image"  class="bannerImg" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+    <!--Slider End -->
+  
+  
+  
+  
+  <ion-toolbar class="footer" color="footer">
+  
+    <ion-buttons padding>
+      <button ion-button (click)="gtContact()" >
+        Contact Us
+      </button>
+    
+      <button ion-button (click)="gtFaq()" >
+        FAQ's
+      </button>
+    
+      <button ion-button (click)="gtPP()">
+        Privacy Policy
+      </button>
+      
+      <button ion-button (click)="gtTnc()">
+        Terms and Conditions
+      </button>
+      <a href="./vendor/index.html">
+        <button ion-button (click)="gtV()">
+          Become a Vendor
+        </button>
+      </a>
+  
+    </ion-buttons>
+  </ion-toolbar>
+  
+  
+  
+  <!--Desktop Footer-->
+  
+  
+  <ion-toolbar color="footer" *ngIf="!ism" >
+    <ion-grid>
+      <ion-row>
+  
+  
+        <ion-col >
+          <ion-list  no-lines >
+            <ion-item color="footer">
+              Contact Us
+            </ion-item>
+            <ion-item color="footer">
+            <h2>Flat : 100, Avenue Lane, NewYork</h2>
+            <h2>+91-9100000012</h2>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+  
+  
+        <ion-col>
+          <ion-list  no-lines>
+            <ion-item color="footer">
+              Connect with Us
+            </ion-item>
+            <a target="_blank" href="https://www.facebook.com/">
+            <button icon-only ion-button color="footer" >
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </a>
+            <a target="_blank" href="https://www.instagram.com/?hl=en">
+            <button icon-only ion-button color="footer">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </button>
+          </a>
+            <a target="_blank" href="https://twitter.com/">
+            <button icon-only ion-button color="footer">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+          </a>
+            <a target="_blank" href="https://www.youtube.com/">
+            <button icon-only ion-button color="footer">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </button>
+          </a>
+          </ion-list>
+        </ion-col>
+  
+  
+        <ion-col>
+          <ion-list no-lines>
+            <ion-item color="footer">
+              <h2>Payment Options</h2>
+            </ion-item>
+            <ion-item color="footer">
+              <h2>Cash</h2>
+              <h2>Online Payment</h2>
+              <h2>Paytm</h2>
+              <h2>TEZ Transfer</h2>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+  
+  
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  
+  <!--Desktop Footer End -->
+  
+  <!--Mobile Footer -->
+  
+  
+  <ion-toolbar color="footer" *ngIf="ism">
+    <ion-grid>
+      <ion-row>
+  
+  
+          <ion-list no-lines>
+            <ion-item color="footer">
+              Contact Us
+            </ion-item>
+            <ion-item color="footer">
+              <h2>Flat : 100, Avenue Lane, NewYork</h2>
+              <h2>+91-9100000012</h2>
+            </ion-item>
+          </ion-list>
+      </ion-row>
+  
+        <ion-row>
+          <ion-list no-lines>
+            <ion-item color="footer">
+              Connect with Us
+            </ion-item>
+            <a target="_blank" href="https://www.facebook.com/">
+              <button icon-only ion-button color="footer">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </button>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/?hl=en">
+              <button icon-only ion-button color="footer">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </button>
+            </a>
+            <a target="_blank" href="https://twitter.com/">
+              <button icon-only ion-button color="footer">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </button>
+            </a>
+          </ion-list>
+        </ion-row>
+  
+  
+        <ion-row>
+          <ion-list no-lines>
+            <ion-item color="footer">
+              <h2>Payment Options</h2>
+            </ion-item>
+            <ion-item color="footer">
+              <h2>Cash</h2>
+              <h2>Online Payment</h2>
+              <h2>Paytm</h2>
+              <h2>TEZ Transfer</h2>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+  
+  
+    </ion-grid>
+  </ion-toolbar>
+  
+  
+  
+  
+  <!--Mobile Footer End-->
+  
+  
+  
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5af5d61b5f7cdf4f05341577/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+  
+  </ion-content>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
