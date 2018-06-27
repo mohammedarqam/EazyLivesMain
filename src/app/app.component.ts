@@ -3,12 +3,6 @@ import { Nav, Platform, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
-import * as firebase from 'firebase';
-import { ContactUsPage } from '../pages/contact-us/contact-us';
-import { FaqPage } from '../pages/faq/faq';
-import { PpolicyPage } from '../pages/ppolicy/ppolicy';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +10,7 @@ import { PpolicyPage } from '../pages/ppolicy/ppolicy';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = "HomePage";
   userin: boolean;
 
   pages: Array<{title: string, component: any}>;
@@ -30,7 +24,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
+      { title: 'Home', component: "HomePage" },
     ];
 
   }
@@ -50,7 +44,7 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
   gtLogin() {
-    this.nav.setRoot(LoginPage);
+    this.nav.setRoot("LoginPage");
   }
 
 

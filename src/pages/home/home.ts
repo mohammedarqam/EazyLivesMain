@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController,Platform, PopoverController, LoadingController} from 'ionic-angular';
+import { NavController,Platform, PopoverController, LoadingController, IonicPage} from 'ionic-angular';
 import * as firebase from 'firebase';
-import { CategoriesPage } from '../categories/categories';
-import { LoginPage } from '../login/login';
-import { ContactUsPage } from '../contact-us/contact-us';
-import { FaqPage } from '../faq/faq';
-import { PpolicyPage } from '../ppolicy/ppolicy';
-import { TncPage } from '../tnc/tnc';
+
+
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -81,40 +78,35 @@ signOut(){
   }
   
   gtHome(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot("HomePage");
   }
   gtLogin(){
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot("LoginPage");
   }
 
 //Footer Links
 
   gtContact(){
-    this.navCtrl.setRoot(ContactUsPage);
+    this.navCtrl.setRoot("ContactUsPage");
   }
 
   gtFaq() {
-    this.navCtrl.setRoot(FaqPage);
+    this.navCtrl.setRoot("FaqPage");
   }
   gtPP() {
-    this.navCtrl.setRoot(PpolicyPage);
+    this.navCtrl.setRoot("PpolicyPage");
   }
   gtTnc() {
-    this.navCtrl.setRoot(TncPage);
+    this.navCtrl.setRoot("TncPage");
   }
 //Footer links end
 
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(CategoriesPage);
+    let popover = this.popoverCtrl.create("CategoriesPage");
     popover.present({
       ev: myEvent
     });
   }
 
 }
-  
-
-
-// WEBPACK FOOTER //
-// ./src/pages/home/home.ts

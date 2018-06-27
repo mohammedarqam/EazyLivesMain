@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, Platform, PopoverController, LoadingController} from 'ionic-angular';
 import * as firebase from 'firebase';
-import { ContactUsPage } from '../contact-us/contact-us';
-import { FaqPage } from '../faq/faq';
-import { PpolicyPage } from '../ppolicy/ppolicy';
-import { TncPage } from '../tnc/tnc';
-import { HomePage } from '../home/home';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 
@@ -115,24 +110,24 @@ loginSlide(){
 
 
 gtHome() {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot("HomePage");
   }
 
 
   //Footer Links
 
   gtContact() {
-    this.navCtrl.setRoot(ContactUsPage);
+    this.navCtrl.setRoot("ContactUsPage");
   }
 
   gtFaq() {
-    this.navCtrl.setRoot(FaqPage);
+    this.navCtrl.setRoot("FaqPage");
   }
   gtPP() {
-    this.navCtrl.setRoot(PpolicyPage);
+    this.navCtrl.setRoot("PpolicyPage");
   }
   gtTnc() {
-    this.navCtrl.setRoot(TncPage);
+    this.navCtrl.setRoot("TncPage");
   }
 //Footer links end
 

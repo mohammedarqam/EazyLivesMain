@@ -1,3 +1,32 @@
 page-login {
 
+     .card-desktop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 50%;
+        border: solid 2px;
+        border-color: #131a22;
+      }
+      
+       .input-desktop {
+        border-bottom: solid 1px;
+        border-color: #131a22;
+        margin: 20px;
+      }
+      
+       .input-m {
+        border-bottom: solid 1px;
+        border-color: #131a22;
+      }
+      
+       .divider {
+        height: 30px;
+        opacity: 0;
+      }
+
+
+
 }

@@ -1,3 +1,15 @@
 page-contact-us {
-
+    .title {
+        font-weight: 400;
+        font-size: 24px;
+      }
+      .scard {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+        width: 50%;
+        border: solid 2px;
+        border-color: #131a22;
+      }      
 }

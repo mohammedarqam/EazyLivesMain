@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { IonicPage, NavController,Platform } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -26,7 +25,7 @@ export class TncPage {
   }
 
   gtHome() {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot("HomePage");
   }
 
 
