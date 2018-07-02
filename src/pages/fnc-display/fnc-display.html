@@ -1,0 +1,37 @@
+<ion-content>
+
+<ion-card class="mainCard" >
+  <ion-card-content>
+
+
+<ion-grid>
+    <ion-row *ngFor="let function of functions" >
+        <ion-card padding class="funCard" >
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-3 >
+                  <img src="assets/imgs/pin.png"/>
+                </ion-col>
+                <ion-col col-7>
+                  <h1 class="Name" >{{function.key}} </h1>
+                  <h2>{{function.MaxCapacity}} </h2>
+        
+                </ion-col>
+
+                <ion-col col-2 >
+
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</ion-card-content>
+</ion-card>
+
+
+</ion-content>

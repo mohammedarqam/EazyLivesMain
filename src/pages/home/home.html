@@ -69,6 +69,8 @@
   
   <ion-navbar color="primary" class="secondBarDesktop" >
         <button ion-button class="btnsSecondBar">Category</button>
+        <button ion-button class="btnSecondBar">Favourites</button>
+        <button ion-button class="btnSecondBar">Help</button>
   
       <ion-buttons end  padding >
         <button ion-button color="button" *ngIf="!userin" (click)="gtLogin()" class="btnsSecondBar" >
@@ -105,7 +107,14 @@
   </div>
     <!--Slider End -->
   
-  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 (click)="baVenue()" class="catCol" >
+            <img src="assets/imgs/pin.png" class="catImg" >
+          Pick a venue
+          </ion-col>
+    </ion-row>
+  </ion-grid>
   
   
   <ion-toolbar class="footer" color="footer">
@@ -130,7 +139,7 @@
         <button ion-button (click)="gtV()">
           Become a Vendor
         </button>
-      </a>
+          </a>
   
     </ion-buttons>
   </ion-toolbar>
@@ -276,19 +285,6 @@
   
   
   
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/5af5d61b5f7cdf4f05341577/default';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
   
   </ion-content>
   

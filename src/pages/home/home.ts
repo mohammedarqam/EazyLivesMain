@@ -109,4 +109,7 @@ signOut(){
     });
   }
 
+  baVenue(){
+    this.navCtrl.setRoot("BookAVenuePage");
+  }
 }
