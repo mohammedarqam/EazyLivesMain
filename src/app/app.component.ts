@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import * as firebase from 'firebase';
 
 @Component({
   templateUrl: 'app.html'
@@ -11,7 +11,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = "HomePage";
-  userin: boolean;
+
 
   pages: Array<{title: string, component: any}>;
 
@@ -25,16 +25,14 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: "HomePage" },
-    ];
+      { title: 'Favourites', component: "HomePage" },
+      { title: 'Help', component: "HomePage" },
+  ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
     });
   }
 
@@ -43,9 +41,5 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-  gtLogin() {
-    this.nav.setRoot("LoginPage");
-  }
-
 
 }

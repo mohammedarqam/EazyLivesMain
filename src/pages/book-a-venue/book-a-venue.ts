@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 
 @IonicPage()
@@ -8,12 +8,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'book-a-venue.html',
 })
 export class BookAVenuePage {
+  
+  ism: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,    public plt: Platform,
+    public navParams: NavParams) {
   }
 
   gtfDisplay(){
     this.navCtrl.setRoot("FncDisplayPage")
   }
+  ionViewDidLoad() {
+    if (this.plt.is("core")) {
+      this.ism = false;
+    } else {
+      this.ism = true;
+    }
+  }
+
+  gtHome() {
+    this.navCtrl.setRoot("HomePage");
+  }
+
 
 }

@@ -1,101 +1,62 @@
 
-<!--Mobile  Zone-->
-
-<ion-header *ngIf="ism" >
-
-  <ion-navbar  color="primary">
-  
-  
-    <button  ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Easy Lives</ion-title>
-  
-  
-  
-      <ion-buttons end>
-        <button ion-button (click)="gtLogin()" icon-only >
-          <ion-icon name="md-contact"></ion-icon>
-        </button>
-  
-        <button ion-button icon-only>
-          <ion-icon name="md-cart"></ion-icon>
-        </button>
-  
-  
-  
-      </ion-buttons>
-  
-      </ion-navbar>
-  
-  
-  
-  
-      <ion-toolbar color="primary">
-  
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  </ion-toolbar>
-  
-  <ion-toolbar color="primary" >
-        <button ion-button >Category</button>
-  </ion-toolbar>
-  
-  </ion-header>
-  
-  <!--Mobile Zone End-->
-  
-  
-  
-  <!--Desktop Zone-->
-  
+  <!--Desktop Header -->  
   <ion-header *ngIf="!ism" >
-    <ion-navbar  color="primary"  >
-    <ion-grid>
-      <ion-row>
-        <ion-col (click)="gtHome()" >
-          <ion-title  >Easy Lives</ion-title>
-        </ion-col>
-        <ion-col col-8 >
-          <ion-searchbar  (ionInput)="getItems($event)"></ion-searchbar>
-        </ion-col>      
-        <ion-col col-2 >
-        <a href="https://play.google.com/store?hl=en" target="_blank">
-          <img src="assets/imgs/playstore.png" class="playstore"/>
-        </a>
-        </ion-col>      
-      </ion-row>
-    </ion-grid>    
-  </ion-navbar>
-  
-  <ion-navbar color="primary" class="secondBarDesktop" >
-        <button ion-button class="btnsSecondBar">Category</button>
-        <button ion-button class="btnSecondBar">Favourites</button>
-        <button ion-button class="btnSecondBar">Help</button>
-  
-      <ion-buttons end  padding >
-        <button ion-button color="button" *ngIf="!userin" (click)="gtLogin()" class="btnsSecondBar" >
-        Sign IN
-        </button>
-        <button ion-button color="button" *ngIf="userin " (click)="signOut()" class="btnsSecondBar">
-          Sign Out
-        </button>
-        <button ion-button icon-only class="btnsSecondBar">
-          <ion-icon name="md-cart"></ion-icon>Cart
-        </button>
-      
-      
-      </ion-buttons>
-  </ion-navbar>
-  
-  
-  
-  
+      <ion-navbar  color="primary"  >
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="gtHome()" >
+            <button ion-button clear color="whiter" large >Easy Lives</button>
+          </ion-col>
+          <ion-col col-8 >
+            <ion-searchbar  (ionInput)="getItems($event)"></ion-searchbar>
+          </ion-col>      
+          <ion-col col-2 >
+          <a href="https://play.google.com/store?hl=en" target="_blank">
+            <img src="assets/imgs/playstore.png" class="playstore"/>
+          </a>
+          </ion-col>      
+        </ion-row>
+      </ion-grid>    
+    </ion-navbar>
+    <ion-navbar color="primary" class="secondBarDesktop" >
+          <button ion-button class="btnsSecondBar">Category</button>
+          <button ion-button class="btnSecondBar">Favourites</button>
+          <button ion-button class="btnSecondBar">Help</button>
+    
+        <ion-buttons end  padding >
+          <button ion-button color="button" *ngIf="!userin" (click)="gtLogin()" class="btnsSecondBar" >
+          Sign IN
+          </button>
+          <button ion-button color="button" *ngIf="userin " (click)="signOut()" class="btnsSecondBar">
+            Sign Out
+          </button>
+        </ion-buttons>
+    </ion-navbar>
   </ion-header>
-  <!--Desktop Zone End-->
+  <!--Desktop Header End-->
+    
+  <!--Mobile Header-->
+  <ion-header *ngIf="ism" >
+    <ion-navbar  color="primary">
+      <button  ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Easy Lives</ion-title>
+        <ion-buttons end>
+          <button ion-button (click)="gtLogin()" icon-only >
+            <ion-icon name="md-contact"></ion-icon>
+          </button>
+        </ion-buttons>
+        </ion-navbar>
+        <ion-toolbar color="primary">
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-toolbar>
+    </ion-header>
+  <!--Mobile Header End -->
+    
   
-  
-  <ion-content>
-  
+<ion-content>
+  <div class="shifter"></div>
   
     <!--Slider -->
   <div class="wrapper">
@@ -111,7 +72,7 @@
     <ion-row>
       <ion-col col-3 (click)="baVenue()" class="catCol" >
             <img src="assets/imgs/pin.png" class="catImg" >
-          Pick a venue
+          <p class="catText"> Pick a venue</p>
           </ion-col>
     </ion-row>
   </ion-grid>

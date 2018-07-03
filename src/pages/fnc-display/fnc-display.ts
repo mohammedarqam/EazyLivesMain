@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, Platform  } from 'ionic-angular';
 import * as firebase from 'firebase';
 
 
@@ -11,13 +11,21 @@ import * as firebase from 'firebase';
 })
 export class FncDisplayPage {
 
+  ism: boolean;
   functionRef = firebase.database().ref("FunctionHalls/");
   public functions: Array<any> = [];
-  public Images : Array<any> = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  public Imgs : Array<any> = [];
+  constructor(public navCtrl: NavController,    public plt: Platform,
+    public navParams: NavParams, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidEnter() {
+    if (this.plt.is("core")) {
+      this.ism = false;
+    } else {
+      this.ism = true;
+    }
+
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
@@ -27,13 +35,24 @@ export class FncDisplayPage {
       itemSnapshot.forEach(itemSnap => {
         var temp = itemSnap.val();
         temp.key = itemSnap.key;
-        console.log(itemSnap.child("Images"));
+
+        this.functionRef.child(temp.key+"/Images").once('value',item => {
+          this.Imgs=[];
+          item.forEach(it =>{
+            this.Imgs.push(it.val());
+            temp.ImgD = this.Imgs[0].ImageUrl;
+          })
+        })
+
         this.functions.push(temp);
         return false;
       });
     }).then(()=>{
       loading.dismiss();
-    })  ;
+    });
+  }
+  gtHome() {
+    this.navCtrl.setRoot("HomePage");
   }
 
 }

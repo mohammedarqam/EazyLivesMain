@@ -1,5 +1,4 @@
 page-home {
-
 .catCol{
   height : 250px;
   cursor: pointer;
@@ -14,7 +13,7 @@ page-home {
 .catImg{
   height : 150px;
   width: 150px;
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -23,30 +22,3 @@ page-home {
 
 
 }
-  
-.playstore {
-    float: right;
-    margin-top: -20px;
-    margin-bottom: -20px;
-    width: 100%;
-    height: auto;
-  }
-  
-  .secondBarDesktop {
-    margin-top: -1%;
-    padding: 0;
-  }
-  
-  .btnsSecondBar {
-    font-size: 120%;
-  }
-  
-  .swiper-slide {
-    height: auto;
-    width: 100%;
-  }
-  
-  .footer {
-    text-align: center;
-  }
-  

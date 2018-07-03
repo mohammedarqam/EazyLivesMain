@@ -8,22 +8,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Easy Lives</ion-title>
-
-
-
-    <ion-buttons end>
-      <button ion-button (click)="gtLogin()" icon-only>
-        <ion-icon name="md-contact"></ion-icon>
-      </button>
-
-      <button ion-button icon-only>
-        <ion-icon name="md-cart"></ion-icon>
-      </button>
-
-
-
-    </ion-buttons>
+    <ion-title (click)="gtHome()">Easy Lives</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="gtLogin()" icon-only>
+          <ion-icon name="md-contact"></ion-icon>
+        </button>
+      </ion-buttons>
 
   </ion-navbar>
 
@@ -40,10 +30,10 @@
   <ion-navbar color="primary">
     <ion-grid>
       <ion-row>
-        <ion-col (click)="gtHome()">
-          <ion-title>Easy Lives</ion-title>
-        </ion-col>
-        <ion-col col-8>
+          <ion-col (click)="gtHome()" >
+              <button ion-button clear color="whiter" large >Easy Lives</button>
+            </ion-col>
+            <ion-col col-8>
           <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
         </ion-col>
         <ion-col col-2>
@@ -54,11 +44,6 @@
       </ion-row>
     </ion-grid>
   </ion-navbar>
-
-
-
-
-
 </ion-header>
 <!--Desktop Zone End-->
 

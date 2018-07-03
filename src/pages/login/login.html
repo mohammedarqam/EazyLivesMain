@@ -1,78 +1,40 @@
 <!--Mobile  Zone-->
-
 <ion-header *ngIf="ism">
-
-  <ion-navbar color="primary">
-
-
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Easy Lives</ion-title>
-
-
-
-    <ion-buttons end>
-      <button ion-button (click)="gtLogin()" icon-only>
-        <ion-icon name="md-contact"></ion-icon>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
       </button>
-
-      <button ion-button icon-only>
-        <ion-icon name="md-cart"></ion-icon>
-      </button>
-
-
-
-    </ion-buttons>
-
-  </ion-navbar>
-
-
-</ion-header>
-
-<!--Mobile Zone End-->
-
-
-
-<!--Desktop Zone-->
-
-<ion-header *ngIf="!ism">
-  <ion-navbar color="primary">
-    <ion-grid>
-      <ion-row>
-        <ion-col (click)="gtHome()">
-          <ion-title>Easy Lives</ion-title>
-        </ion-col>
-        <ion-col col-8>
-          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-        </ion-col>
-        <ion-col col-2>
-          <a href="https://play.google.com/store?hl=en" target="_blank">
-            <img src="assets/imgs/playstore.png" class="playstore" />
-          </a>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-navbar>
-
-
-
-
-
-</ion-header>
-<!--Desktop Zone End-->
-
-
-
-
-
-
-
-
-
-
-
-<ion-content *ngIf="ism">
+      <ion-title (click)="gtHome()">Easy Lives</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="gtLogin()" icon-only>
+          <ion-icon name="md-contact"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <!--Mobile Zone End-->
+  <!--Desktop Zone-->
+  <ion-header *ngIf="!ism">
+    <ion-navbar color="primary">
+      <ion-grid>
+        <ion-row>
+            <ion-col (click)="gtHome()" >
+                <button ion-button clear color="whiter" large >Easy Lives</button>
+              </ion-col>
+                <ion-col col-8>
+            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+          </ion-col>
+          <ion-col col-2>
+            <a href="https://play.google.com/store?hl=en" target="_blank">
+              <img src="assets/imgs/playstore.png" class="playstore" />
+            </a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-navbar>
+  </ion-header>
+  <!--Desktop Zone End-->
+ <ion-content *ngIf="ism">
 
   <ion-slides #slides>
 
@@ -241,21 +203,6 @@
   </ion-slides>
 
 
-
-
-
-
-
-
-
-
-
-
-</ion-content>
-
-<ion-footer>
-
-
   <ion-toolbar class="footer" color="footer">
 
     <ion-buttons padding>
@@ -282,10 +229,4 @@
 
     </ion-buttons>
   </ion-toolbar>
-
-
-
-
-
-
-</ion-footer>
+</ion-content>

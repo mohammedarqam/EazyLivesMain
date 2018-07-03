@@ -10,12 +10,11 @@ import * as firebase from 'firebase';
 })
 export class HomePage {
 
-
+  userin: boolean;
+  ism : boolean ;
   bannerRef = firebase.database().ref("Banners");
   public banners: Array<any> = [];
-  ism : boolean ;
 
-  userin : boolean;
 
   constructor(
   public navCtrl: NavController,
@@ -26,43 +25,14 @@ export class HomePage {
 
   
   ionViewDidLoad() {
-    
-    if(this.plt.is("core")){
-      this.ism = false;
-    }else{
-      this.ism = true;
-    }
-
+      if(this.plt.is("core")){
+        this.ism = false;
+      }else{
+        this.ism = true;
+      }
     this.checkAuth();
     this.getBanners();
 }
-
-
-checkAuth(){
-  if (firebase.auth().currentUser) {
-    this.userin = true;
-    } else {
-      this.userin = false;
-    }
-
-}
-
-signOut(){
-  firebase.auth().signOut().then(()=> {
-    let loading = this.loadingCtrl.create({
-      content: 'Signing Up...'
-    });
-    loading.present();
-
-
-    this.userin = null;
-    this.userin = false;
-    loading.dismiss();
-  }).catch(function (error) {
-    alert(error.message);
-  });
-}
-
 
   getBanners() {
 
@@ -77,12 +47,40 @@ signOut(){
     });
   }
   
+  gtLogin() {
+    this.navCtrl.setRoot("LoginPage");
+  }
+
+  checkAuth(){
+    if (firebase.auth().currentUser) {
+      this.userin = true;
+      } else {
+        this.userin = false;
+      }
+  
+  }
+  
+  signOut(){
+    firebase.auth().signOut().then(()=> {
+      let loading = this.loadingCtrl.create({
+        content: 'Signing Up...'
+      });
+      loading.present();
+  
+  
+      this.userin = null;
+      this.userin = false;
+      loading.dismiss();
+    }).catch(function (error) {
+      alert(error.message);
+    });
+  }
+  
   gtHome(){
     this.navCtrl.setRoot("HomePage");
   }
-  gtLogin(){
-    this.navCtrl.setRoot("LoginPage");
-  }
+
+
 
 //Footer Links
 
