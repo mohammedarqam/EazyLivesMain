@@ -36,37 +36,40 @@
   <!--Desktop Zone End-->
   
 <ion-content padding>
-    <img src="assets/imgs/farmhouse.jpg">
-
+  
   <ion-slides>
   <ion-slide>
     <ion-grid>
       <ion-row>
 
         <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card>
-            <div class="title">Function Hall</div>
+          <ion-card class="function" >
+              <div class="overlay"></div>
+              <div class="title">Function Hall</div>
           </ion-card>
         </ion-col>
 
 
         <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card>
-            Farm House
+          <ion-card class="farm" >
+              <div class="overlay"></div>
+              <div class="title">Farm House</div>
           </ion-card>
         </ion-col>
 
 
         <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card>
-            Banquet Hall
+          <ion-card class="banquet" >
+              <div class="overlay"></div>
+            <div class="title">Banquet Hall</div>
           </ion-card>
         </ion-col>
 
 
         <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card>
-            Resort
+          <ion-card class="resort" >
+              <div class="overlay"></div>
+            <div class="title">Resort</div>
           </ion-card>
         </ion-col>
 

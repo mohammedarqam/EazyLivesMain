@@ -1,15 +1,9 @@
 page-fnc-display {
-    .mainCard {
-        position: absolute;
-        left: 50%;
-        -webkit-transform: translate(-50%, 0%);
-        transform: translate(-50%, 0%);
-        width: 90%;
-        box-shadow : 0 5px 5px 0 rgba(0,0,0,0.25);
+.funCard{
+    box-shadow : 0 5px 5px 0 rgba(0,0,0,0.5);
+}
 
-      }
-
-    .funCard{
-        box-shadow : 0 5px 5px 0 rgba(0,0,0,0.25);
-    }
+.menubar{
+    border-right: 1px solid black;
+}
 }

@@ -36,38 +36,93 @@
   <!--Desktop Zone End-->
  <ion-content>
 
-<ion-card class="mainCard" >
-  <ion-card-content>
-
 
 <ion-grid>
-    <ion-row *ngFor="let function of functions" >
-        <ion-card padding class="funCard" >
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col col-3 >
-                  <img [src]="function.ImgD"/>
-                </ion-col>
-                <ion-col col-7>
-                  <h1 class="Name" >{{function.key}} </h1>
-                  <h2>{{function.MaxCapacity}} </h2>
-        
-                </ion-col>
+  <ion-row>
+    <ion-col col-2 class="menubar" >
 
-                <ion-col col-2 >
+      <button ion-button block color="button" (click)="clear">Clear</button>
 
-                </ion-col>
+      <div>
+        <ion-input type="number" placeholder="Minimum Capacity" [(ngModel)]="minCapacity" ></ion-input>
+      </div>
 
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-row>
-  </ion-grid>
+      <div>
+          <ion-input type="number" placeholder="Maximum Capacity" [(ngModel)]="maxCapacity" ></ion-input>
+      </div>
 
-</ion-card-content>
-</ion-card>
+      <div>
+        <ion-input type="number" placeholder="Minimum Price" [(ngModel)]="minCapacity" ></ion-input>
+      </div>
+
+      <div>
+        <ion-input type="number" placeholder="Minimum Price" [(ngModel)]="minCapacity" ></ion-input>
+      </div>
+
+      <ion-item>
+        <ion-label>With In</ion-label>
+        <ion-range [(ngModel)]="range" snaps="true" color="button" min="5" max="50" step="5" >
+        </ion-range>
+      </ion-item>
+      {{range}} Kms
+
+    </ion-col>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ion-col col-10 >
+        <ion-row>
+            <ion-searchbar placeholder="Enter Funtion Hall Name" (ionInput)="getItems($event)"></ion-searchbar>
+          </ion-row>
+          <ion-row *ngFor="let function of functions" >
+            <ion-card padding class="funCard" >
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-3 >
+                      <img [src]="function.ImgD"/>
+                    </ion-col>
+                    <ion-col col-7>
+                      <h1 class="Name" >{{function.key}} </h1>
+                      <h2>{{function.MaxCapacity}} </h2>
+            
+                    </ion-col>
+    
+                    <ion-col col-2 >
+    
+                    </ion-col>
+    
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+        </ion-row>
+    
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+
+
+
+
 
 
 </ion-content>

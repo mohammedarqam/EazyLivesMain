@@ -15,6 +15,11 @@ export class FncDisplayPage {
   functionRef = firebase.database().ref("FunctionHalls/");
   public functions: Array<any> = [];
   public Imgs : Array<any> = [];
+
+  range :string = "5";
+
+
+
   constructor(public navCtrl: NavController,    public plt: Platform,
     public navParams: NavParams, public loadingCtrl: LoadingController) {
   }
