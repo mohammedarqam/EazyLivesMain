@@ -1,0 +1,44 @@
+<ion-header class="content" > 
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title (click)="gtHome()">Easy Lives</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="gtLogin()" icon-only>
+          <ion-icon name="md-contact"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-searchbar placeholder="Enter Funtion Hall Name" [(ngModel)]="searchBar" (ionInput)="getItems(searchBar)"></ion-searchbar>
+    </ion-navbar>
+    <button ion-button class="filterButton" right color="button" (click)="gtFilters()" >
+            <ion-icon name="funnel" ></ion-icon>
+            Filter
+        </button>
+    
+</ion-header>
+<ion-content>
+        
+<ion-card class="funCard" *ngFor="let function of functions" >
+  <ion-card-content>
+
+
+
+    <img [src]="function.ImgD" class="imageF" />
+    <p class="name"> {{function.key}}</p>
+    <p class="details"> Max Capacity :  {{function.MaxCapacity}} </p>
+    <p class="details"> Amount : {{function.MBAmount}} </p>
+
+
+
+
+
+
+
+  </ion-card-content>
+</ion-card>  
+                
+
+</ion-content>

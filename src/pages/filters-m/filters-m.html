@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>Filters</ion-title>
+  </ion-navbar>
+<ion-item no-lines >
+  <h2 item-start >Refine Your Results</h2>
+  <button ion-button clear (click)="clear()" color="button" item-end>Clear All</button>
+</ion-item>
+</ion-header>
+
+<ion-content padding>
+
+
+<ion-item>
+  <ion-label floating >Minimum Capacity</ion-label>
+  <ion-input type="number" [(ngModel)]="minCapacity" ></ion-input>
+</ion-item>  
+
+<ion-item>
+  <ion-label floating >Maximum Capacity</ion-label>
+  <ion-input type="number"   [(ngModel)]="maxCapacity" ></ion-input>
+</ion-item>  
+
+
+<ion-item>
+  <ion-label floating >Minimum Price</ion-label>
+  <ion-input type="number"  [(ngModel)]="minPrice" ></ion-input>
+</ion-item>  
+
+<ion-item>
+  <ion-label floating >Maximum Price</ion-label>
+  <ion-input type="number"  [(ngModel)]="maxPrice" ></ion-input>
+</ion-item>  
+
+
+</ion-content>
+
+
+
+<ion-footer>
+  <button ion-button color="danger" block (click)="apply()">Apply</button>
+</ion-footer>

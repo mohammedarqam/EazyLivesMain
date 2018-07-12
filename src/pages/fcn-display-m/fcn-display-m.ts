@@ -3,23 +3,20 @@ import { IonicPage, NavController, NavParams, LoadingController, Platform  } fro
 import * as firebase from 'firebase';
 
 
-
 @IonicPage()
 @Component({
-  selector: 'page-fnc-display',
-  templateUrl: 'fnc-display.html',
+  selector: 'page-fcn-display-m',
+  templateUrl: 'fcn-display-m.html',
 })
-export class FncDisplayPage {
+export class FcnDisplayMPage {
 
-  
-  
   functionRef = firebase.database().ref("FunctionHalls/");
   public functions: Array<any> = [];
   public loadedFunctions : Array<any> = [];
   public Imgs : Array<any> = [];
 
-  minCapacity : number ;
-  maxCapacity : number ;
+  minCapacity : number = this.navParams.get("minCapacity") ;
+  maxCapacity : number = this.navParams.get("maxCapacity");
 
   minPrice : number;
   maxPrice : number;
@@ -28,8 +25,11 @@ export class FncDisplayPage {
 
 
 
-  constructor(public navCtrl: NavController,    public plt: Platform,
-    public navParams: NavParams, public loadingCtrl: LoadingController) {
+  constructor(
+  public navCtrl: NavController,    
+  public plt: Platform,
+  public navParams: NavParams, 
+  public loadingCtrl: LoadingController) {
   }
 
   ionViewDidEnter() {
@@ -152,18 +152,9 @@ getFunctions(){
 
   }
 
-
-
-
-
-  clear(){
-    this.maxCapacity = null;
-    this.minCapacity = null;
-    this.minPrice = null;
-    this.maxPrice = null;
-    this.range = "5";
+  gtFilters(){
+    this.navCtrl.push("FiltersMPage");
   }
-
 
 
   gtHome() {
@@ -171,3 +162,5 @@ getFunctions(){
   }
 
 }
+
+

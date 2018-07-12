@@ -1,8 +1,13 @@
 page-book-a-venue {
-    ion-card {
+    .cardD {
         position: relative;
         text-align: center;
         height: 600px;
+      }
+      .cardM {
+        position: relative;
+        text-align: center;
+        height: 200px;
       }
       .function{
         background-image: url("../../assets/imgs/functionhall.jpg") !important ;

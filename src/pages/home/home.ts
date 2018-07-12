@@ -24,14 +24,14 @@ export class HomePage {
   ){}
 
   
-  ionViewDidLoad() {
-      if(this.plt.is("core")){
+  ionViewDidEnter() {
+    this.getBanners();
+    if(this.plt.is("core")){
         this.ism = false;
       }else{
         this.ism = true;
       }
-    this.checkAuth();
-    this.getBanners();
+      this.checkAuth();
 }
 
   getBanners() {
@@ -108,6 +108,13 @@ export class HomePage {
   }
 
   baVenue(){
-    this.navCtrl.setRoot("BookAVenuePage");
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present();
+
+    this.navCtrl.setRoot("BookAVenuePage").then(()=>{
+      loading.dismiss();
+    }) ;
   }
 }

@@ -37,37 +37,35 @@
   
 <ion-content padding>
   
-  <ion-slides>
-  <ion-slide>
-    <ion-grid>
+    <ion-grid *ngIf="!ism"  >
       <ion-row>
 
-        <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card class="function" >
+        <ion-col col-md-3 (click)="gtfDisplay()" >
+          <ion-card class="function cardD " >
               <div class="overlay"></div>
               <div class="title">Function Hall</div>
           </ion-card>
         </ion-col>
 
 
-        <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card class="farm" >
+        <ion-col col-md-3 (click)="gtfDisplay()" >
+          <ion-card class="farm cardD" >
               <div class="overlay"></div>
               <div class="title">Farm House</div>
           </ion-card>
         </ion-col>
 
 
-        <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card class="banquet" >
+        <ion-col col-md-3 (click)="gtfDisplay()" >
+          <ion-card class="banquet cardD" >
               <div class="overlay"></div>
             <div class="title">Banquet Hall</div>
           </ion-card>
         </ion-col>
 
 
-        <ion-col col-3 (click)="gtfDisplay()" >
-          <ion-card class="resort" >
+        <ion-col col-md-3 (click)="gtfDisplay()" >
+          <ion-card class="resort cardD" >
               <div class="overlay"></div>
             <div class="title">Resort</div>
           </ion-card>
@@ -75,7 +73,43 @@
 
       </ion-row>
     </ion-grid>
-</ion-slide>
-</ion-slides>
+
+
+    <ion-grid *ngIf="ism"  >
+
+
+      <ion-row (click)="gtfDisplay()" >
+          <ion-card class="function cardM " >
+              <div class="overlay"></div>
+              <div class="title">Function Hall</div>
+          </ion-card>
+      </ion-row>
+
+
+        <ion-row  (click)="gtfDisplay()" >
+          <ion-card class="farm cardM " >
+              <div class="overlay"></div>
+              <div class="title">Farm House</div>
+          </ion-card>
+        </ion-row>
+
+
+        <ion-row  (click)="gtfDisplay()" >
+          <ion-card class="banquet cardM " >
+              <div class="overlay"></div>
+            <div class="title">Banquet Hall</div>
+          </ion-card>
+        </ion-row>
+
+
+        <ion-row col-md-3 (click)="gtfDisplay()" >
+          <ion-card class="resort cardM " >
+              <div class="overlay"></div>
+            <div class="title">Resort</div>
+          </ion-card>
+        </ion-row>
+
+    </ion-grid>
+
 
 </ion-content>
